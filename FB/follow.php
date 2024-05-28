@@ -1,17 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Follow</h1>
-    <form  method="post">
-        <input type="text" name="username" placeholder="username">
-        <input type="submit" value="Follow">
-        </form>
-        </body>
 
-</body>
-</html>
+ <?php
+session_start();
+
+include("connection.php");
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $user = $_POST['user'];
+    $friend = $_POST['friend'];
+    $sql = "INSERT INTO friends(user, friend) VALUES ('$user', '$friend')";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "data inserted";
+    } else {
+        echo "Error: ";
+    }
+    mysqli_close($conn);
+        }
+?>

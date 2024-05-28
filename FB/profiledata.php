@@ -59,9 +59,9 @@ if ($result->num_rows > 0) {
                     <div class="d-flex mt-2">
 
 
-                        <form action="add.php" method="post">
-                            <input type="text" name="user" value="<?php echo htmlspecialchars($user); ?>">
-                            <input type="text" name="friend" value="<?php echo htmlspecialchars($friend); ?>">
+                        <form action="follow.php" method="post">
+                            <input type="hidden" name="user" value="<?php echo htmlspecialchars($user); ?>">
+                            <input type="hidden" name="friend" value="<?php echo htmlspecialchars($friend); ?>">
                             <button class="btn1 btn-dark" type="submit">Follow</button>
                         </form>
 
